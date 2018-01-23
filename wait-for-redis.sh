@@ -9,7 +9,7 @@ echo "Try ping Redis... "
 PONG=`redis-cli -h $HOST -p $PORT ping | grep PONG`
 while [ -z "$PONG" ]; do
     sleep 1
-    echo -n "Retry Redis ping... "
+    echo "Retry Redis ping... "
     PONG=`redis-cli -h $HOST -p $PORT ping | grep PONG`
 done
 echo "Redis at host '$HOST', port '$PORT' fully started."
